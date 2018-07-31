@@ -18,8 +18,8 @@ class ODBCConnector extends DB2Connector
     {
         $dsnParts = [
             'odbc:DRIVER=%s',
-            'System=%s',
-            'Database=%s',
+            'HOSTNAME=%s',
+            'DATABASE=%s',
             'UserID=%s',
             'Password=%s',
         ];
@@ -44,5 +44,6 @@ class ODBCConnector extends DB2Connector
         }
 
         return sprintf(implode(';', $dsnParts), ...$dsnConfig);
+
     }
 }
